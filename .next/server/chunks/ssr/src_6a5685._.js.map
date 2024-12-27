@@ -1,7 +1,0 @@
-{
-  "version": 3,
-  "sources": [],
-  "sections": [
-    {"offset": {"line": 7, "column": 0}, "map": {"version":3,"sources":["file://C%3A/portfolio/hexvon/src/utility/animation.tsx"],"sourcesContent":["\"use client\";\r\n\r\nimport React from \"react\";\r\nimport { motion } from \"framer-motion\";\r\n\r\nexport const SocialIcon = ({ Icon, isActive, onClick }) => {\r\n  const iconVariants = {\r\n    initial: { scale: 1, color: \"#6B7280\" }, \r\n    active: { scale: 1.25, color: \"primary\" }, \r\n  };\r\n\r\n  return (\r\n    <motion.div\r\n      initial=\"initial\"\r\n      animate={isActive ? \"active\" : \"initial\"}\r\n      variants={iconVariants}\r\n      whileTap={{ scale: 1.5 }}\r\n      className=\"cursor-pointer\"\r\n      onClick={onClick}\r\n    >\r\n      <Icon />\r\n    </motion.div>\r\n  );\r\n};\r\n\r\n"],"names":[],"mappings":";;;;AAGA;AAHA;;;AAKO,MAAM,aAAa,CAAC,EAAE,IAAI,EAAE,QAAQ,EAAE,OAAO,EAAE;IACpD,MAAM,eAAe;QACnB,SAAS;YAAE,OAAO;YAAG,OAAO;QAAU;QACtC,QAAQ;YAAE,OAAO;YAAM,OAAO;QAAU;IAC1C;IAEA,qBACE,8OAAC,0LAAA,CAAA,SAAM,CAAC,GAAG;QACT,SAAQ;QACR,SAAS,WAAW,WAAW;QAC/B,UAAU;QACV,UAAU;YAAE,OAAO;QAAI;QACvB,WAAU;QACV,SAAS;kBAET,cAAA,8OAAC;;;;;;;;;;AAGP"}},
-    {"offset": {"line": 46, "column": 0}, "map": {"version":3,"sources":[],"names":[],"mappings":"A"}}]
-}
