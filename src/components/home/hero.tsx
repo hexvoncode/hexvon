@@ -2,7 +2,7 @@
 import Image from "next/image";
 import React, { useState } from "react";
 import { FaFacebook, FaInstagram, FaLinkedin, FaYoutube } from "react-icons/fa";
-import { motion } from "framer-motion";
+
 const Hero = () => {
   const [activeIcon, setActiveIcon] = useState<string | null>(null);
 
