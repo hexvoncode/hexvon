@@ -35,7 +35,7 @@ const Navbar = () => {
 
       {/* Desktop Navigation Links */}
       <motion.nav
-        className="hidden sm:flex space-x-8 font-medium text-lg"
+        className="hidden lg:flex space-x-8 font-medium text-lg"
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ delay: 0.3, duration: 0.5 }}
@@ -59,15 +59,15 @@ const Navbar = () => {
       </motion.nav>
 
       {/* Mobile Menu Toggle */}
-      <div className="sm:hidden">
+      <div className="lg:hidden">
         <button
           onClick={() => setMobileMenuOpen((prev) => !prev)}
           className="text-primary focus:outline-none"
         >
           {isMobileMenuOpen ? (
-            <MdOutlineClose className="text-2xl" />
+            <MdOutlineClose className="text-2xl sm:text-3xl" />
           ) : (
-            <HiMenuAlt3 className="text-2xl" />
+            <HiMenuAlt3 className="text-2xl sm:text-3xl" />
           )}
         </button>
       </div>
@@ -76,7 +76,7 @@ const Navbar = () => {
       <AnimatePresence>
         {isMobileMenuOpen && (
           <motion.div
-            className="absolute top-20 left-0 w-full bg-white text-black shadow-lg p-5 flex flex-col space-y-4 text-center"
+            className="absolute top-20 left-0 w-full bg-white text-black shadow-lg p-5 flex flex-col space-y-4 text-center z-50"
             initial={{ opacity: 0, y: -50 }}
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -70 }}
@@ -111,7 +111,7 @@ const Navbar = () => {
           scale: 1.1,
         }}
         whileTap={{ scale: 0.95 }}
-        className="hidden sm:block rounded-full"
+        className="hidden lg:block rounded-full"
       >
         <button className="size-16 py-2 rounded-full bg-primary text-white font-semibold text-2xl rotate-12 uppercase">
           Get

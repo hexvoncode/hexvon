@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Montserrat:wght@100..900&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Montserrat:wght@100..900&display=swap");
 
 @tailwind base;
 @tailwind components;
@@ -12,7 +12,7 @@ body {
 
 @layer base {
   * {
-    @apply  !scroll-smooth;
+    @apply !scroll-smooth;
   }
   body {
     @apply bg-background text-foreground;
@@ -20,4 +20,17 @@ body {
   button {
     @apply active:outline-none;
   }
+}
+
+@layer utilities {
+  .social-icon {
+    @apply size-5 md:size-8 
+  }
+  .mask-image {
+    background-image: linear-gradient(to right, #ff7e5f, #feb47b); /* Gradient effect */
+    -webkit-background-clip: text;  /* Ensure background clip works for text */
+    background-clip: text;          /* For regular browsers */
+    color: transparent;             /* Make the text transparent to show background */
+  }
+  
 }
