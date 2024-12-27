@@ -847,11 +847,6 @@ button:active {
   color: rgb(0 0 0 / var(--tw-text-opacity, 1));
 }
 
-.text-blue-50 {
-  --tw-text-opacity: 1;
-  color: rgb(239 246 255 / var(--tw-text-opacity, 1));
-}
-
 .text-primary {
   --tw-text-opacity: 1;
   color: rgb(248 162 33 / var(--tw-text-opacity, 1));
