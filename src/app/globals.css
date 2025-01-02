@@ -7,7 +7,7 @@
 body {
   font-family: "Montserrat", serif;
   font-family: "Inter", serif;
-  background-color: black;
+  background: linear-gradient(135deg, #000000, #1a1a1a);
 }
 
 @layer base {
@@ -24,13 +24,33 @@ body {
 
 @layer utilities {
   .social-icon {
-    @apply size-5 md:size-8 
+    @apply size-5 md:size-8;
   }
-  .mask-image {
-    background-image: linear-gradient(to right, #ff7e5f, #feb47b); /* Gradient effect */
-    -webkit-background-clip: text;  /* Ensure background clip works for text */
-    background-clip: text;          /* For regular browsers */
-    color: transparent;             /* Make the text transparent to show background */
+  .h2-bold {
+    @apply text-3xl lg:text-4xl xl:text-6xl font-bold space-y-2 text-white uppercase leading-tight;
   }
-  
+
+  /* Ripple Animate Button */
+  .btn {
+    position: relative;
+    z-index: 1; 
+  }
+  .btn::before {
+    content: "";
+    position: absolute;
+    top: var(--y);
+    left: var(--x);
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background: #fff;
+    transform: translate(-50%, -50%);
+    transition: width 0.5s ease, height 0.5s ease;
+    z-index: -1;
+  }
+
+  .btn:hover::before {
+    width: 300px;
+    height: 300px;
+  }
 }
