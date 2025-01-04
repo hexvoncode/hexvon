@@ -21,8 +21,12 @@ export default {
           "100": "#FFF9F9", // Fixed: Corrected the extra # in white.100
           DEFAULT: "#FFFFFF", // Default white color
         },
+       
         background: "var(--background)", // CSS variable for background color
         foreground: "var(--foreground)", // CSS variable for foreground color
+      },
+      fontFamily: {
+        inter: ["Inter", "sans-serif"], // Add Inter as the default sans-serif font
       },
       borderRadius: {
         lg: "var(--radius)", // Custom large radius
@@ -32,6 +36,7 @@ export default {
       animation: {
         spotlight: "spotlight 2s ease .75s 1 forwards", // Custom animation
       },
+      
 	  keyframes: {
 		spotlight: {
 		  "0%": {

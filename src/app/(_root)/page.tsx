@@ -1,12 +1,13 @@
 import Hero from "@/components/home/hero";
-import Testimonial from "@/components/home/testimonial";
+import About from "@/components/home/about";
 
 
 export default function Home() {
   return (
     <main className="flex justify-center items-center flex-col overflow-hidden sm:px-10 px-5">
       <Hero />
-      <Testimonial />
+      <About />
     </main>
+    
   );
 }
