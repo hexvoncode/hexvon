@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Montserrat:wght@100..900&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Montserrat:wght@100..900&display=swap");
 
 @tailwind base;
 @tailwind components;
@@ -7,12 +7,14 @@
 body {
   font-family: "Montserrat", serif;
   font-family: "Inter", serif;
-  background-color: black;
+}
+.scrollbar {
+  @apply scrollbar-thin h-8 scrollbar-thumb-primary scrollbar-track-gray-700 scroll-smooth;
 }
 
 @layer base {
   * {
-    @apply  !scroll-smooth;
+    @apply !scroll-smooth;
   }
   body {
     @apply bg-background text-foreground;
@@ -20,4 +22,53 @@ body {
   button {
     @apply active:outline-none;
   }
+}
+
+@layer utilities {
+  .social-icon {
+    @apply size-5 md:size-8;
+  }
+  .h2-bold {
+    @apply text-3xl lg:text-4xl xl:text-6xl font-bold space-y-2 text-white uppercase leading-tight;
+  }
+
+  /* Ripple Animate Button */
+  .btn {
+    position: relative;
+    z-index: 1;
+    pointer-events: auto;
+  }
+  .btn::before {
+    content: "";
+    position: absolute;
+    top: var(--y);
+    left: var(--x);
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background: #fff;
+    transform: translate(-50%, -50%);
+    transition: width 0.5s ease, height 0.5s ease;
+    z-index: -1;
+  }
+
+  .btn:hover::before {
+    width: 300px;
+    height: 300px;
+  }
+
+  /* testimonial swiperjs pagination */
+  .swiper .swiper-pagination-bullet {
+    background-color: #ffffff;
+  }
+
+  .swiper .swiper-pagination-bullet-active {
+    background-color: #fccb28;
+  }
+}
+.horizontal-scroll-container {
+  pointer-events: none; /* Disables interactions on the container */
+}
+.horizontal-scroll-container .ripple-button-container {
+  pointer-events: auto; /* Re-enables interaction for the button */
 }
