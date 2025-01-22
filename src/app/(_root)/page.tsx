@@ -5,7 +5,6 @@ import About from "@/components/home/about";
 import ChooseUsSmall from "@/components/home/chooseus/chooseUsSmall";
 import Relax from "@/components/home/relax";
 
-
 export default function Home() {
   return (
     <main className="flex justify-center items-center flex-col overflow-hidden sm:px-10 px-5">

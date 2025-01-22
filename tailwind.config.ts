@@ -6,9 +6,9 @@ const {
 export default {
   darkMode: ["class"], // Enables dark mode via class
   content: [
-    "./src/pages/**/*.{js,ts,jsx,tsx,mdx}",
-    "./src/components/**/*.{js,ts,jsx,tsx,mdx}",
-    "./src/app/**/*.{js,ts,jsx,tsx,mdx}",
+    "./src/pages/**/*.{js,ts,jsx,tsx,html}",
+    "./src/components/**/*.{js,ts,jsx,tsx,html}",
+    "./src/app/**/*.{js,ts,jsx,tsx,html}",
   ],
   theme: {
     extend: {
