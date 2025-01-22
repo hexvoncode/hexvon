@@ -2,9 +2,8 @@ import Image from "next/image";
 import RippleButton from "../custom-ui/RippleButton";
 
 const About = () => {
- 
   return (
-    <section className="min-h-screen mt-24 mb-60">
+    <section className="min-h-screen mt-24 ">
       <div className="flex flex-col md:flex-row w-full max-w-full">
         <div className="flex-1 p-0 sticky">
           <Image
@@ -25,8 +24,8 @@ const About = () => {
             </div>
 
             <div>
-              <h2 className="h2-bold animate-slide-up">
-                WE ARE LEADING <br /> WEB DEVELOPMENT AGENCY.
+              <h2 className="h2-bold ">
+                WE ARE LEADING <br /> WEB DEVELOPMENT <br /> AGENCY.
               </h2>
             </div>
             <div className="border-l mt-2 ml-4 border-white/20 p-4 flex flex-col">
@@ -39,7 +38,9 @@ const About = () => {
               </p>
 
               {/* Circular button */}
-             <RippleButton title="Explore us"/>
+              <div className="ml-24">
+                <RippleButton title="Explore us" />
+              </div>
             </div>
           </div>
         </div>

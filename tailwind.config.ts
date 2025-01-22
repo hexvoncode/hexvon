@@ -1,13 +1,14 @@
 import type { Config } from "tailwindcss";
 const {
-	default: flattenColorPalette,
-  } = require("tailwindcss/lib/util/flattenColorPalette");
+  default: flattenColorPalette,
+} = require("tailwindcss/lib/util/flattenColorPalette");
+
 export default {
   darkMode: ["class"], // Enables dark mode via class
   content: [
-    "./src/pages/**/*.{js,ts,jsx,tsx,mdx}",
-    "./src/components/**/*.{js,ts,jsx,tsx,mdx}",
-    "./src/app/**/*.{js,ts,jsx,tsx,mdx}",
+    "./src/pages/**/*.{js,ts,jsx,tsx,html}",
+    "./src/components/**/*.{js,ts,jsx,tsx,html}",
+    "./src/app/**/*.{js,ts,jsx,tsx,html}",
   ],
   theme: {
     extend: {
@@ -18,7 +19,7 @@ export default {
       colors: {
         primary: "#F8A221", // Custom primary color
         white: {
-          "100": "#FFF9F9", // Fixed: Corrected the extra # in white.100
+          "100": "#FFF9F9", // Corrected the extra # in white.100
           DEFAULT: "#FFFFFF", // Default white color
         },
        
@@ -36,31 +37,35 @@ export default {
       animation: {
         spotlight: "spotlight 2s ease .75s 1 forwards", // Custom animation
       },
-      
-	  keyframes: {
-		spotlight: {
-		  "0%": {
-			opacity: "0", // Make opacity a string
-			transform: "translate(-72%, -62%) scale(0.5)", // Ensure transform is a string
-		  },
-		  "100%": {
-			opacity: "1", // Make opacity a string
-			transform: "translate(-50%, -40%) scale(1)", // Ensure transform is a string
-		  },
-		},
-	  },
-	  
+      keyframes: {
+        spotlight: {
+          "0%": {
+            opacity: "0", // Make opacity a string
+            transform: "translate(-72%, -62%) scale(0.5)", // Ensure transform is a string
+          },
+          "100%": {
+            opacity: "1", // Make opacity a string
+            transform: "translate(-50%, -40%) scale(1)", // Ensure transform is a string
+          },
+        },
+      },
     },
   },
-  plugins: [require("tailwindcss-animate"),addVariablesForColors], // Tailwind CSS plugin for animations
+  plugins: [
+    require("tailwindcss-animate"),
+    require("tailwind-scrollbar"),
+    addVariablesForColors, // Custom plugin for color variables
+  ],
 } satisfies Config;
+
+// Custom plugin to add CSS variables for colors
 function addVariablesForColors({ addBase, theme }: any) {
-	let allColors = flattenColorPalette(theme("colors"));
-	let newVars = Object.fromEntries(
-	  Object.entries(allColors).map(([key, val]) => [`--${key}`, val])
-	);
-   
-	addBase({
-	  ":root": newVars,
-	});
-  }
+  const allColors = flattenColorPalette(theme("colors"));
+  const newVars = Object.fromEntries(
+    Object.entries(allColors).map(([key, val]) => [`--color-${key}`, val]) // Prefixing variable names
+  );
+
+  addBase({
+    ":root": newVars,
+  });
+}

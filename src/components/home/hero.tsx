@@ -16,7 +16,7 @@ const Hero = () => {
     }`;
 
   return (
-    <section className="container mx-auto relative min-h-screen p-2 lg:p-8">
+    <section className="container mx-auto relative lg:min-h-screen p-2 lg:p-8 mb-12">
       {/* Hero content */}
       <div>
         <div className="flex gap-2 md:gap-4">
@@ -38,7 +38,7 @@ const Hero = () => {
             onClick={() => handleIconClick("instagram")}
           />
         </div>
-        <h1 className="uppercase text-4xl md:text-6xl lg:text-7xl xl:text-8xl font-extrabold mt-36 md:mt-24 lg:mt-36 xl:mt-40 md:leading-tight">
+        <h1 className="uppercase text-4xl md:text-6xl lg:text-7xl xl:text-8xl 2xl:text-9xl font-extrabold mt-36 md:mt-24 lg:mt-36 xl:mt-40 md:leading-tight">
           BUILD <br />
           SOMETHING <br />
           <span className="text-primary">AMAZING</span> <br />
@@ -52,7 +52,7 @@ const Hero = () => {
           alt="hero"
           width={550}
           height={600}
-          className="w-52 md:w-[300px] lg:w-[400px] xl:w-[500px]"
+          className="w-52 md:w-[300px] lg:w-[400px] xl:w-[500px] 2xl:w-[600px]"
         />
       </div>
     </section>
